@@ -15,6 +15,7 @@ model User {
   createdAt DateTime @default(now())
   leads     Lead[]   @relation("LeadOwner")
   deals     Deal[]   @relation("DealOwner")
+  clients   Client[] @relation("ClientOwner")
   activities Activity[] @relation("ActivityCreator")
   reports   Report[] @relation("ReportGenerator")
 }
@@ -58,7 +59,7 @@ model Client {
   accountName  String
   contractValue Float
   renewalDate  DateTime?
-  owner        User     @relation(fields: [ownerId], references: [id])
+  owner        User     @relation("ClientOwner", fields: [ownerId], references: [id])
   ownerId      String
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt

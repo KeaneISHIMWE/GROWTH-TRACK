@@ -1,8 +1,8 @@
-import { Router } from 'express';
-import { prisma } from '../prisma';
-import { revenueSchema } from '../validators';
+import express from 'express';
+import { prisma } from '../prisma.ts';
+import { revenueSchema } from '../validators.ts';
 
-const router = Router();
+const router = express.Router();
 
 router.get('/', async (_req, res) => {
   const rows = await prisma.revenue.findMany({ orderBy: { occurredOn: 'desc' } });

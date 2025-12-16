@@ -1,5 +1,5 @@
-import { NextFunction, Response } from 'express';
-import { RequestWithUser } from './auth';
+import type { NextFunction, Response } from 'express';
+import type { RequestWithUser } from './auth.ts';
 
 export const requireRole = (roles: string[]) => {
   return (req: RequestWithUser, res: Response, next: NextFunction) => {

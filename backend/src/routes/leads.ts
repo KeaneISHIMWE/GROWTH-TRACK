@@ -1,9 +1,9 @@
-import { Router } from 'express';
-import { prisma } from '../prisma';
-import { leadSchema } from '../validators';
-import { RequestWithUser } from '../middleware/auth';
+import express from 'express';
+import { prisma } from '../prisma.ts';
+import { leadSchema } from '../validators.ts';
+import type { RequestWithUser } from '../middleware/auth.ts';
 
-const router = Router();
+const router = express.Router();
 
 // List leads with optional filtering
 router.get('/', async (req: RequestWithUser, res) => {
