@@ -6,7 +6,7 @@ import Leads from './components/Leads'
 import Pipeline from './components/Pipeline'
 import Reports from './components/Reports'
 
-function App() {
+function App() {   
   return (
     <Router>
       <div className="min-h-screen bg-gray-50">
